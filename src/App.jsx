@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 // --- CONFIGURATION ---
-const GEMINI_API_KEY = "AIzaSyDOEabdOjSZCo-61k7iXFCV29eNzHtur6Q";
+const GEMINI_API_KEY = "";
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 const App = () => {
