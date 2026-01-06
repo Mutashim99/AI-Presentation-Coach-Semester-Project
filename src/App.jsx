@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 // --- CONFIGURATION ---
-const GEMINI_API_KEY = "AIzaSyDOEabdOjSZCo-61k7iXFCV29eNzHtur6Q";
+const GEMINI_API_KEY = "AIzaSyBm5uWNyH2V1_Pv1smjqnpJ6QEU9Dyp5v8";
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 const App = () => {
@@ -735,38 +735,38 @@ const App = () => {
       });
     }
 
-    // --- PAGE 2: TRANSCRIPT ---
-    doc.addPage();
-    doc.setFillColor(...bg);
-    doc.rect(0, 0, 210, 297, "F");
+    // // --- PAGE 2: TRANSCRIPT ---
+    // doc.addPage();
+    // doc.setFillColor(...bg);
+    // doc.rect(0, 0, 210, 297, "F");
 
-    // Transcript Header
-    doc.setFillColor(30, 41, 59);
-    doc.rect(0, 0, 210, 30, "F");
-    doc.setTextColor(...accent);
-    doc.setFontSize(16);
-    doc.text("SESSION TRANSCRIPT", 20, 20);
+    // // Transcript Header
+    // doc.setFillColor(30, 41, 59);
+    // doc.rect(0, 0, 210, 30, "F");
+    // doc.setTextColor(...accent);
+    // doc.setFontSize(16);
+    // doc.text("SESSION TRANSCRIPT", 20, 20);
 
-    // Transcript Body
-    doc.setTextColor(200, 200, 200);
-    doc.setFont("courier", "normal");
-    doc.setFontSize(10);
+    // // Transcript Body
+    // doc.setTextColor(200, 200, 200);
+    // doc.setFont("courier", "normal");
+    // doc.setFontSize(10);
 
-    const splitTranscript = doc.splitTextToSize(safeTranscript, 170);
-    let lineY = 50;
+    // const splitTranscript = doc.splitTextToSize(safeTranscript, 170);
+    // let lineY = 50;
 
-    // Loop through lines to handle page breaks for very long transcripts
-    for (let i = 0; i < splitTranscript.length; i++) {
-      if (lineY > 280) {
-        doc.addPage();
-        doc.setFillColor(...bg);
-        doc.rect(0, 0, 210, 297, "F");
-        doc.setTextColor(200, 200, 200);
-        lineY = 20;
-      }
-      doc.text(splitTranscript[i], 20, lineY);
-      lineY += 5;
-    }
+    // // Loop through lines to handle page breaks for very long transcripts
+    // for (let i = 0; i < splitTranscript.length; i++) {
+    //   if (lineY > 280) {
+    //     doc.addPage();
+    //     doc.setFillColor(...bg);
+    //     doc.rect(0, 0, 210, 297, "F");
+    //     doc.setTextColor(200, 200, 200);
+    //     lineY = 20;
+    //   }
+    //   doc.text(splitTranscript[i], 20, lineY);
+    //   lineY += 5;
+    // }
 
     doc.save("SmartStance_Report_Pro.pdf");
     setPhase("boot");
